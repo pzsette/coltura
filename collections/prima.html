@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prima collezione</title>
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style type="text/css">
+        @font-face {
+            font-family: Coltura;
+            src: url(../Coltura.dfont);
+        }
+
+        html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        color: #000;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 85%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 85%;
+        object-fit: scale-down;
+      }
+
+    </style>
+
+    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  
+</head>
+<body>
+    <div style="height: 10%; width: 100%; display: flex">
+      <div style="width: 70%; height: auto; ">
+          <img style="height:auto; width: auto; max-width: 100%; max-height: 100%;" src="../assets/logo.png">
+      </div>
+      <div style="width: 30%;text-align: right; vertical-align: bottom;">
+          <div style="bottom:0px">
+              <a href="#"><p style="position: relative; font-family: Coltura; font-size: 1rem; margin-right: 1rem; top: 100%;">union</p></a>
+          </div>
+      </div>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="clothes" src="./photos/prima/34e911b1-7e12-4c1d-bab0-55c4a77c2708.JPG">
+          </div>
+          <div class="swiper-slide">
+            <img class="clothes" src="./photos/prima/3d54bb0a-ffb8-415a-a4df-5de13f697691.JPG">
+          </div>
+          <div class="swiper-slide">
+            <img class="clothes" src="./photos/prima/68f46940-4663-486e-a041-96b1e559350c.JPG">
+          </div>
+          <div class="swiper-slide">
+            <img class="clothes" src="./photos/prima/9c08d2d6-0795-427f-9404-d6cde93d5990.JPG">
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  
+</body>
+</html>

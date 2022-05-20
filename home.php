@@ -131,7 +131,7 @@
 		</div>
 		<div class="container">
 			<div id="tf-manifesto" style="margin-top: 10%">
-				<img src="logo-home-due.jpeg" style="position:relative; display:block; margin-left: auto;margin-right: auto;width: 40%;">
+				<a href="collection.html"><img src="logo-home-due.jpeg" style="position:relative; display:block; margin-left: auto;margin-right: auto;width: 40%;"></a>
 				<div class="row" style="margin-top:20%;">
 					<div class="col-lg-offset-1 col-lg-10" style="position: relative;">
 						<p style="font-size: 15px; font-family: Coltura; text-align: center">
@@ -168,7 +168,7 @@
 		<footer id="footer" style="margin-top: 10%; margin-bottom: 10%">
 				<div class="container">
 					<hr>
-					<center><a href="#" id="btnLogin"><p style="font-size:20px; margin-top: -1%; font-weight: bold; font-family: Coltura; text-decoration: none; color:black;">union</p></a></center>
+					<center><a href="#" id="btnLogin"><p style="font-family: Coltura;">union</p></a></center>
 				</div>
 		</footer>
 

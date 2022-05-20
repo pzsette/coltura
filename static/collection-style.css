@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Coltura;
+    src: url(./Coltura.dfont);
+}
+
+.form-box {
+    width: 50%; 
+    background-color: yellow"
+}
+
+.top-box {
+    background-color: red;
+    width: 100%; 
+    display: flex"
+}
+
+.logo-box {
+    width: 50%; 
+    background-color:purple;
+}
+
+.logo-img {
+    max-width: 100%; 
+    height:auto;
+}
+
