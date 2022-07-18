@@ -5,6 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Coltura</title>
+	<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+	<script src="./script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<style>
@@ -24,11 +27,27 @@
 		}
 
 		.logo {
-			width: 25vw;
+			font-size: xx-large;
+			margin-left: 2rem;
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.union {
+			font-size: xx-large;
+			text-decoration: none;
+			color: inherit;
 		}
 
 		.title {
-			font-size: larger;
+			font-size: 1rem;
+			margin-bottom: 3rem;
+			margin-left: 7rem;
+		}
+
+		.description {
+			font-size: 0.7rem;
+			margin-left: 7rem;
 		}
 
 		.sidebar-btn {
@@ -43,12 +62,20 @@
 		}
 
 		@media (max-width: 600px) {
+
 			.logo {
-				width: 50vw;
+				font-size: x-large;
+				margin-left: 2rem;
 			}
 
 			.title {
-				font-size: smaller;
+				margin-top: 1rem;
+				margin-left: auto;
+				margin-left: 0rem;
+			}
+
+			.description {
+				margin-left: 0px;
 			}
 
 			.sidebar-btn {
@@ -59,6 +86,67 @@
 			.union {
 				display: none;
 			}
+		}
+
+		/* UNIONS CSS */
+		#inputForm {
+			font-family: Coltura !important;
+			position: absolute;
+			display: none;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.9);
+			z-index: 2;
+			cursor: pointer;
+		}
+
+		#btnLogin:hover {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		#sub {
+			margin-left: 95%;
+			border: none;
+			/* Remove borders */
+			color: white;
+			/* White text */
+			font-size: 20px;
+			/* Set a font size */
+			cursor: pointer;
+			/* Mouse pointer on hover */
+		}
+
+		/* Darker background on mouse-over */
+		#sub:hover {
+			color: white;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.form-control {
+			color: #ccc;
+			background: transparent;
+			border: none;
+			height: none !important;
+			border-bottom: 1px solid rgba(255, 255, 255, .2);
+		}
+
+		.form-control:focus {
+			outline: none;
+			box-shadow: none;
+		}
+
+		.form-control::placeholder {
+			overflow: visible;
+			color: #ccc;
+			font-size: 12px;
+			font-weight: 400;
 		}
 	</style>
 </head>
@@ -78,7 +166,44 @@
 </svg>
 
 <body>
+	<!-- union page -->
+	<div id="inputForm">
+		<div class="container" style="margin-top: 20%;">
+			<div class="row" style="border: solid 1px red;">
+				<button onclick="closeForm()" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+			</div>
+			<div class="row" style="border: solid 1px green;">
+				<p class="mt-4" style="font-size:large; font-family: Coltura; color: white">per collaborare, per informazioni, per
+					consigliare:</p>
+			</div>
 
+			<div class="col-lg-offset-1 col-lg-10" style="margin-top: 5%">
+				<form action="contactForm.php" method="post" role="form" data-toggle="validator">
+					<div class="form-group">
+						<input type="text" class="form-control" name="nome" id="nome" placeholder="nome" required>
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<input type="email" class="form-control" name="email1" id="email1" placeholder="email" required>
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="oggetto" id="oggetto" placeholder="oggetto"
+							required>
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<textarea type="text" rows="5" class="form-control" name="messaggio" id="messaggio"
+							placeholder="messaggio" required></textarea>
+						<div class="help-block with-errors"></div>
+					</div>
+					<button type="submit" name="submit" class="btn mt-4"><p style="color: white">invia</p></button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- sidebar -->
 	<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 		<div class="offcanvas-header">
 			<h1 class="offcanvas-title" id="offcanvasExampleLabel">coltura</h1>
@@ -89,21 +214,24 @@
 				<a href="../collection.html" class="link-dark my-3 d-inline-flex text-decoration-none rounded">home</a>
 			</div>
 			<div>
-				<p>union</p>
+				<button onclick='openForm()' class="btn btn-toggle p-0 mt-1 rounded border-0">
+					<p>union</p>
+				</button>
 			</div>
-			<button class="btn btn-toggle p-0 d-inline-flex align-items-center rounded border-0 collapsed"
-				data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+
+			<button class="btn btn-toggle p-0 rounded border-0 collapsed" data-bs-toggle="collapse"
+				data-bs-target="#account-collapse" aria-expanded="false">
 				<p class="m-0">collections</p>
 			</button>
 			<div class="collapse" id="account-collapse">
 				<ul class="btn-toggle-nav list-unstyled fw-normal">
-					<li><a href="#"
+					<li><a href="./prima.html"
 							class="link-dark d-inline-flex text-decoration-none rounded coll-list">c01-cot;liut//4pa.lb</a>
 					</li>
-					<li><a href="#"
+					<li><a href="./seconda.html"
 							class="link-dark d-inline-flex text-decoration-none rounded coll-list">c02-cot;api//5pa.lb</a>
 					</li>
-					<li><a href="#"
+					<li><a href="./terza.html"
 							class="link-dark d-inline-flex text-decoration-none rounded coll-list">c03-cot.tecimp;pas//5pa.lb</a>
 					</li>
 					<li><a href="#"
@@ -115,41 +243,50 @@
 	</div>
 
 	<!-- navabr -->
-	<header class="pt-3 pl-1">
-		<div class="m-1 m-md-4" class="container">
-
-			<div class="d-flex flex-wrap align-items-center justify-content-between">
-				<div>
-					<a style="text-decoration: none;" class="p-md-4 p-3" data-bs-toggle="offcanvas"
-						href="#offcanvasExample">
-						<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-list sidebar-btn" viewBox="0 0 16 16">
-							<path fill-rule="evenodd"
-								d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-						</svg>
-					</a>
-					<a class="navbar-brand" href="../collection.html">
-						<img class="img-responsive logo" src="../assets/logo.png" alt="">
-					</a>
-				</div>
-				<div class="union">
-					<a href="#" class="nav-link px-2">union</a>
-				</div>
-			</div>
+	<navbar style="height: 10%;" class="px-4 pt-4 p-md-5 navbar navbar-light justify-content-between">
+		<div style="display:flex; justify-content: center">
+			<a style="text-decoration: none;" data-bs-toggle="offcanvas" href="#offcanvasExample">
+				<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-list sidebar-btn" viewBox="0 0 16 16">
+					<path fill-rule="evenodd"
+						d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+				</svg>
+			</a>
+			<a href="#" class="logo">coltura</a>
 		</div>
-	</header>
 
-	<!-- title -->
-	<h1 class="text-md-start text-center mt-1 mx-md-5 p-3 title">c04-cot.tec;vas//3pa.lb</h1>
+		<div style="display:flex; justify-content: center">
+			<a onclick='openForm()' href="#" class="union">union</a>
+		</div>
+	</navbar>
 
-	<!-- photos -->
+
 	<main>
+		<div class="container m-md-0">
+			<!-- title -->
+			<h1 class="text-md-start title text-center">c04-cot.tec;vas//3pa.lb</h1>
+
+			<p class="w-md-50 text-md-start text-center description">there are many variations of passages of Lorem
+				Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
+				randomised words which don't look even slightly believable. if you are going to use a passage of lorem
+				ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+		</div>
+
+		<!-- photos -->
+
+		<!-- main photo with desc-->
 		<div class="position-relative overflow-hidden-50 p-3 p-md-1 m-md-1 text-center">
 			<img style=" object-fit: scale-down; height:70vh;" src="./photos/Coltura/Camaiti7754 2.jpg"
 				alt="main photo">
 			<p class="my-3">descrizione del capo</p>
 		</div>
 
+		<!-- second photo with -->
+		<div class="position-relative overflow-hidden-50 p-3 p-md-1 m-md-1 text-center">
+			<img style=" object-fit: scale-down; height:70vh;" src="./photos/Coltura/Camaiti7754 2.jpg"
+				alt="main photo">
+		</div>
 
+		<!--  4 photo row -->
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 col-6 py-1">
@@ -167,31 +304,43 @@
 			</div>
 		</div>
 
+		<!--  2 photo row -->
+		<div class="container">
+			<div class="row justify-content-md-center">
+				<div class="col-md-4 col-6 py-1">
+					<img style=" object-fit:contain" src="./photos/Coltura/Camaiti7770-1 2.jpg" alt="detail-photo">
+				</div>
+				<div class="col-md-4 col-6 py-1">
+					<img style=" object-fit:contain" src="./photos/Coltura/Camaiti7771-1 2.jpg" alt="detail-photo">
+				</div>
+			</div>
+		</div>
+
+		<!--  3 photo row -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-12 py-1">
+					<img style=" object-fit:contain" src="./photos/Coltura/Camaiti7770-1 2.jpg" alt="detail-photo">
+				</div>
+				<div class="col-md-4 col-12 py-1">
+					<img style=" object-fit:contain" src="./photos/Coltura/Camaiti7771-1 2.jpg" alt="detail-photo">
+				</div>
+				<div class="col-md-4 col-12 py-1">
+					<img style=" object-fit:contain" src="./photos/Coltura/Camaiti7774-1 2.jpg" alt="detail-photo">
+				</div>
+			</div>
+		</div>
+
+		<!-- 1 photo row -->
 		<div class="position-relative overflow-hidden-50 p-3 p-md-1 mt-4 mt-md-4 m-md-1 text-center">
 			<img style=" object-fit: scale-down; height:70vh;" src="./photos/Coltura/Camaiti7784 2.jpg"
 				alt="main photo">
-			<p class="my-3">descrizione del capo</p>
 		</div>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 col-6 py-1">
-					<img width="100%" height="100%" style=" object-fit:contain"
-						src="./photos/Coltura/Camaiti7784-1 2.jpg" alt="detail-photo">
-				</div>
-				<div class="col-md-3 col-6 py-1">
-					<img width="100%" height="100%" style=" object-fit:contain" src="./photos/Coltura/Camaiti7784 2.jpg"
-						alt="detail-photo">
-				</div>
-				<div class="col-md-3 col-6 py-1">
-					<img width="100%" height="100%" style=" object-fit:contain"
-						src="./photos/Coltura/Camaiti7787-1 2.jpg" alt="detail-photo">
-				</div>
-				<div class="col-md-3 col-6 py-1">
-					<img width="100%" height="100%" style=" object-fit:contain" src="./photos/Coltura/Camaiti7788 2.jpg"
-						alt="detail-photo">
-				</div>
-			</div>
+		<!-- 1 photo row -->
+		<div class="position-relative overflow-hidden-50 p-3 p-md-1 mt-4 mt-md-4 m-md-1 text-center">
+			<img style=" object-fit: scale-down; height:70vh;" src="./photos/Coltura/Camaiti7784 2.jpg"
+				alt="main photo">
 		</div>
 
 	</main>
@@ -218,8 +367,8 @@
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-		crossorigin="anonymous"></script>
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+		</script>
 </body>
 
 </html>

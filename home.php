@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Coltura</title>
+	<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
 		<meta name="description" content="Coltura.it descrizione">
 		<meta name="keywords" content="Coltura, vestiti, abbigliamento">
 		<link rel="icon" href="img/favicon.png" />
