@@ -100,6 +100,8 @@
 	}
 	</style>
 </head>
+
+	<!-- form -->
 	<body data-spy="scroll" data-target=".navbar">
 		<div id="inputForm">
 			<div class="container" style="margin-top: 23%">
@@ -130,9 +132,11 @@
 				</center>
 			</div>
 		</div>
+
+		<!-- main-->
 		<div class="container">
 			<div id="tf-manifesto" style="margin-top: 10%">
-				<a href="collection.html"><img src="logo-home-due.jpeg" style="position:relative; display:block; margin-left: auto;margin-right: auto;width: 40%;"></a>
+				<a href="collection.html"><img src="./assets/logo-home-due.jpeg" style="position:relative; display:block; margin-left: auto;margin-right: auto;width: 40%;"></a>
 				<div class="row" style="margin-top:20%;">
 					<div class="col-lg-offset-1 col-lg-10" style="position: relative;">
 						<p style="font-size: 15px; font-family: Coltura; text-align: center">

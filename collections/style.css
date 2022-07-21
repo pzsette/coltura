@@ -1,0 +1,136 @@
+@font-face {
+    font-family: Coltura;
+    src: url(../Coltura.dfont);
+}
+
+p,
+a,
+h1 {
+    font-family: Coltura !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+.logo {
+    font-size: xx-large;
+    margin-left: 2rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.union {
+    font-size: xx-large;
+    text-decoration: none;
+    color: inherit;
+}
+
+.title {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    margin-left: 7rem;
+}
+
+.description {
+    font-size: 0.7rem;
+    margin-left: 7rem;
+}
+
+.sidebar-btn {
+    height: 40px;
+    width: 40px;
+}
+
+.coll-list {
+    font-size: small;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+
+    .logo {
+        font-size: x-large;
+        margin-left: 2rem;
+    }
+
+    .title {
+        margin-top: 1rem;
+        margin-left: 0rem;
+    }
+
+    .description {
+        margin-left: 0px;
+    }
+
+    .sidebar-btn {
+        height: 25px;
+        width: 25px;
+    }
+
+    .union {
+        display: none;
+    }
+}
+
+/* UNIONS CSS */
+#inputForm {
+    font-family: Coltura !important;
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#btnLogin:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#sub {
+    margin-left: 95%;
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* White text */
+    font-size: 20px;
+    /* Set a font size */
+    cursor: pointer;
+    /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+#sub:hover {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-control {
+    color: #ccc;
+    background: transparent;
+    border: none;
+    height: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    overflow: visible;
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 400;
+}
