@@ -96,11 +96,10 @@ h1 {
     }
 }
 
-
-
+/* UNIONS CSS */
 #inputForm {
     font-family: Coltura !important;
-    position: fixed;
+    position: absolute;
     display: none;
     width: 100%;
     height: 100%;
@@ -108,8 +107,14 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 2;
+    cursor: pointer;
+}
+
+#btnLogin:hover {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
 }
 

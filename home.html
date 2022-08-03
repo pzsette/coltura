@@ -1,17 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Coltura</title>
-	<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+	<meta name="description" content="Coltura.it descrizione">
+	<meta name="keywords" content="Coltura, vestiti, abbigliamento">
+	<link rel="icon" href="assets/favicon.ico" />
 	<script src="./js/script.js"></script>
-	<link rel="stylesheet" href="./collection_style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<style type="text/css">
+		@font-face {
+			font-family: Coltura;
+			src: url(Coltura.dfont);
+		}
+
+		p {
+			font-family: Coltura !important;
+		}
+
+		.logo {
+			width: 30%;
+			position: relative;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.union {
+			font-size: x-large;
+			margin-left: 2rem;
+			text-decoration: none;
+			color: inherit;
+		}
+
+		@media (max-width: 767px) {
+			.logo {
+				width: 60%;
+			}
+		}
+
+
+		/* UNIONS CSS */
+		#inputForm {
+			font-family: Coltura !important;
+			position: absolute;
+			display: none;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.9);
+			z-index: 2;
+			cursor: pointer;
+		}
+
+		#btnLogin:hover {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		#sub {
+			margin-left: 95%;
+			border: none;
+			/* Remove borders */
+			color: white;
+			/* White text */
+			font-size: 20px;
+			/* Set a font size */
+			cursor: pointer;
+			/* Mouse pointer on hover */
+		}
+
+		/* Darker background on mouse-over */
+		#sub:hover {
+			color: white;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.form-control {
+			color: #ccc;
+			background: transparent;
+			border: none;
+			height: none !important;
+			border-bottom: 1px solid rgba(255, 255, 255, .2);
+		}
+
+		.form-control:focus {
+			outline: none;
+			box-shadow: none;
+		}
+
+		.form-control::placeholder {
+			overflow: visible;
+			color: #ccc;
+			font-size: 12px;
+			font-weight: 400;
+		}
+	</style>
 </head>
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 	<symbol id="facebook" viewBox="0 0 16 16">
 		<path
@@ -28,14 +123,17 @@
 </svg>
 
 <body>
+
 	<!-- union page -->
 	<div id="inputForm">
 		<div class="container mt-3 mt-md-4">
 			<div class="row">
-				<button onclick="closeForm()" type="button" class="mx-2 btn-close btn-close-white" aria-label="Close"></button>
+				<button onclick="closeForm()" type="button" class="mx-2 btn-close btn-close-white"
+					aria-label="Close"></button>
 			</div>
 			<div class="row">
-				<p class="mt-4" style="font-size:large; font-family: Coltura; color: white">per collaborare, per informazioni, per
+				<p class="mt-4" style="font-size:large; font-family: Coltura; color: white">per collaborare, per
+					informazioni, per
 					consigliare:</p>
 			</div>
 
@@ -54,102 +152,53 @@
 							required>
 						<div class="help-block with-errors"></div>
 					</div>
-					<div class="form-group mt-1">
+					<div class="form-groupmt-1">
 						<textarea type="text" rows="5" class="form-control" name="messaggio" id="messaggio"
 							placeholder="messaggio" required></textarea>
 						<div class="help-block with-errors"></div>
 					</div>
-					<button type="submit" name="submit" class="btn mt-4"><p style="color: white">invia</p></button>
+					<button type="submit" name="submit" class="btn mt-4">
+						<p style="color: white">invia</p>
+					</button>
 				</form>
 			</div>
 		</div>
 	</div>
 
-	<!-- sidebar -->
-	<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-		<div class="offcanvas-header">
-			<h1 class="offcanvas-title" id="offcanvasExampleLabel">coltura</h1>
-			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-		</div>
-		<div class="offcanvas-body">
-			<div>
-				<a href="./home.html" class="link-dark my-3 d-inline-flex text-decoration-none rounded">home</a>
-			</div>
-			<div>
-				<button onclick='openForm()' class="btn btn-toggle p-0 mt-1 rounded border-0">
-					<p>union</p>
-				</button>
-			</div>
-
-			<button class="btn btn-toggle p-0 rounded border-0 collapsed" data-bs-toggle="collapse"
-				data-bs-target="#account-collapse" aria-expanded="false">
-				<p class="m-0">collections</p>
-			</button>
-			<div class="collapse" id="account-collapse">
-				<ul class="btn-toggle-nav list-unstyled fw-normal">
-					<li><a href="./collections/c_01.html"
-							class="link-dark d-inline-flex text-decoration-none rounded coll-list-side">c01-cot;liut//4pa.lb</a>
-					</li>
-					<li><a href="./collections/c_02.html"
-							class="link-dark d-inline-flex text-decoration-none rounded coll-list-side">c02-cot;api//5pa.lb</a>
-					</li>
-					<li><a href="./collections/c_03.html"
-							class="link-dark d-inline-flex text-decoration-none rounded coll-list-side">c03-cot.tecimp;pas//5pa.lb</a>
-					</li>
-					<li><a href="./collections/c_04.html"
-							class="link-dark d-inline-flex text-decoration-none rounded coll-list-side">c04-cot.tec;vas//3pa.lb</a>
-					</li>
-				</ul>
-			</div>
+	<!-- main-->
+	<div class="container">
+		<div id="tf-manifesto" style="margin-top: 5%">
+			<a href="collection.html"><img src="./assets/logo.png" class="py-4 logo" alt="logo">
+			</a>
+			<p class="text-center my-4" style="font-size: 0.9rem;">
+				mai tranquilli sempre agitati<br>
+				mai soddisfatti,sempre alla ricerca<br>
+				mai vincolati,sempre indipendenti<br>
+				noi siamo così<br>
+				irrequieti, aperti, liberi<br>
+				il mondo<br>
+				è il teatro delle nostre esperienze<br>
+				noi siamo i protagonisti ma anche i tecnici<br>
+				ci curiamo che ogni nostra scena sia degna di essere vissuta<br>
+				e lasci un ricordo in chi la vive assieme a noi
+			</p>
 		</div>
 	</div>
 
-	<!-- navabr -->
-	<navbar style="height: 10%;" class="px-4 pt-4 p-md-5 navbar navbar-light justify-content-between">
-		<div style="display:flex; justify-content: center">
-			<a style="text-decoration: none;" data-bs-toggle="offcanvas" href="#offcanvasExample">
-				<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-list sidebar-btn" viewBox="0 0 16 16">
-					<path fill-rule="evenodd"
-						d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-				</svg>
-			</a>
-			<a href="#" class="logo">coltura</a>
-		</div>
+	<div class="container py-4 embed-responsive embed-responsive-16by9">
+		<a href="collection.html">
+			<video width="230" height="170" autoplay muted loop>
+				<source src="videos/coltura41.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</a>
+	</div>
 
-		<div style="display:flex; justify-content: center">
-			<a onclick='openForm()' href="#" class="union">union</a>
-		</div>
-	</navbar>
-
-		<!-- lookbook-->
-        <div class="container m-md-0">
-            <h1 class="text-md-start caption text-center">
-                mai tranquilli sempre agitati<br>
-                mai soddisfatti,sempre alla ricerca<br>
-                mai vincolati,sempre indipendenti<br>
-                noi siamo così<br>
-                irrequieti, aperti, liberi<br>
-                il mondo<br>
-                è il teatro delle nostre esperienze<br>
-                noi siamo i protagonisti ma anche i tecnici<br>
-                ci curiamo che ogni nostra scena sia degna di essere vissuta<br>
-                e<br>
-                lasci un ricordo in chi la vive assieme a noi
-            </h1>
-        </div>
-
-		<!-- collections -->
-        <div class="container m-md-0">
-            <h1 class="text-md-start lookbook-title text-center">lookbook</h1>
-            <ul class="text-md-start coll-list text-center">
-                <li><a class="coll-list-item" href="./collections/c_01.html">c01-cot;liut//4pa.lb</a></li>
-                <li><a class="coll-list-item" href="./collections/c_02.html">c02-cot;api//5pa.lb</a></li>
-                <li><a class="coll-list-item" href="./collections/c_03.html">c03-cot.tecimp;pas//5pa.lb</a></li>
-                <li><a class="coll-list-item" href="./collections/c_04.html">c04-cot.tec;vas//3pa.lb</a></li>
-            </ul>
-        </div>
-
-    </main>
+	<div class="container text-center">
+		<a onclick='openForm()' class="union" href="#" id="btnLogin">
+			<p style="font-family: Coltura;">union</p>
+		</a>
+	</div>
 
 	<!-- footer -->
 	<div class="container">
@@ -172,9 +221,6 @@
 		</footer>
 	</div>
 
-	<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-	</script>-->
 </body>
 
 </html>
