@@ -40,26 +40,21 @@
 			</div>
 
 			<div class="col-lg-offset-1 col-lg-10" style="margin-top: 5%">
-				<form action="contactForm.php" method="post" role="form" data-toggle="validator">
-					<div class="form-group">
-						<input type="text" class="form-control" name="nome" id="nome" placeholder="nome" required>
-						<div class="help-block with-errors"></div>
+				<form target="_blank" action="https://formsubmit.co/your@email.com" method="POST"></form>
+				<div class="form-group">
+					<div class="form-row">
+					  <div class="col my-3">
+						<input type="text" name="name" class="form-control" placeholder="nome" required>
+					  </div>
+					  <div class="col my-3">
+						<input type="email" name="email" class="form-control" placeholder="email" required>
+					  </div>
 					</div>
-					<div class="form-group mt-1">
-						<input type="email" class="form-control" name="email1" id="email1" placeholder="email" required>
-						<div class="help-block with-errors"></div>
-					</div>
-					<div class="form-group mt-1">
-						<input type="text" class="form-control" name="oggetto" id="oggetto" placeholder="oggetto"
-							required>
-						<div class="help-block with-errors"></div>
-					</div>
-					<div class="form-group mt-1">
-						<textarea type="text" rows="5" class="form-control" name="messaggio" id="messaggio"
-							placeholder="messaggio" required></textarea>
-						<div class="help-block with-errors"></div>
-					</div>
-					<button type="submit" name="submit" class="btn mt-4"><p style="color: white">invia</p></button>
+				  </div>
+				  <div class="form-group my-3">
+					<textarea placeholder="messaggio" class="form-control" name="message" rows="5" required></textarea>
+				  </div>
+				  <button type="submit" class="btn btn-md btn-light btn-block">invia</button>
 				</form>
 			</div>
 		</div>
@@ -76,7 +71,7 @@
 				<a href="./home.html" class="link-dark my-3 d-inline-flex text-decoration-none rounded">home</a>
 			</div>
 			<div>
-				<button onclick='openForm()' class="btn btn-toggle p-0 mt-1 rounded border-0">
+				<button onclick='openForm()' class="btn btn-toggle p-0 mt-1 rounded border-0" data-bs-dismiss="offcanvas">
 					<p>union</p>
 				</button>
 			</div>
