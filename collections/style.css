@@ -37,6 +37,11 @@ img {
     margin-left: 7rem;
 }
 
+.clothes-desc {
+    font-size: 0.7rem;
+    margin-left: 7rem;
+}
+
 .sidebar-btn {
     height: 40px;
     width: 40px;
@@ -48,7 +53,7 @@ img {
     margin-left: 10px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     .logo {
         font-size: x-large;
@@ -61,6 +66,10 @@ img {
     }
 
     .description {
+        margin-left: 0px;
+    }
+
+    .clothes-desc {
         margin-left: 0px;
     }
 

@@ -1,6 +1,6 @@
 @font-face {
     font-family: Coltura;
-    src: url(../coltura/Coltura.dfont);
+    src: url(./Coltura.dfont);
 }
 
 p,
@@ -30,6 +30,7 @@ h1 {
 .caption {
     font-size: 0.9rem;
     margin-left: 7rem;
+    line-height: 1.5rem;
 }
 
 .coll-list {
@@ -39,15 +40,14 @@ h1 {
 }
 
 .coll-list-side {
-    font-size: small;
     margin-top: 10px;
     margin-left: 10px;
 }
 
 
 .coll-list-item {
-    color: inherit;
-    font-size: small;
+    color: inherit; 
+    font-size: 1rem;
 }
 
 .lookbook-title {
@@ -56,7 +56,7 @@ h1 {
     font-size: larger;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .logo {
         font-size: x-large;
         margin-left: 2rem;

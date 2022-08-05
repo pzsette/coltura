@@ -13,9 +13,9 @@
 		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-	<symbol id="facebook" viewBox="0 0 16 16">
-		<path
-			d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+	<symbol id="youtube" viewBox="0 0 16 16">
+		<path 
+			d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
 	</symbol>
 	<symbol id="instagram" viewBox="0 0 16 16">
 		<path
@@ -27,39 +27,49 @@
 	</symbol>
 </svg>
 
+<style>
+	.hor-pic {
+		height: 50vh;
+	}
+
+	@media (max-width: 768px) {
+		.hor-pic {
+			height: 25vh;
+		}
+	}
+</style>
+
 <body>
-	<!-- union page -->
+	<!-- union form page -->
 	<div id="inputForm">
 		<div class="container mt-3 mt-md-4">
 			<div class="row">
-				<button onclick="closeForm()" type="button" class="mx-2 btn-close btn-close-white" aria-label="Close"></button>
+				<button onclick="closeForm()" type="button" class="mx-2 btn-close btn-close-white"
+					aria-label="Close"></button>
 			</div>
 			<div class="row">
-				<p class="mt-4" style="font-size:large; font-family: Coltura; color: white">per collaborare, per informazioni, per
+				<p class="mt-4" style="font-size:large; font-family: Coltura; color: white">per collaborare, per
+					informazioni, per
 					consigliare:</p>
 			</div>
 
 			<div class="col-lg-offset-1 col-lg-10" style="margin-top: 5%">
-				<form action="contactForm.php" method="post" role="form" data-toggle="validator">
-					<div class="form-group">
-						<input type="text" class="form-control" name="nome" id="nome" placeholder="nome" required>
-						<div class="help-block with-errors"></div>
+				<form target="_blank" action="https://formsubmit.co/coltura.srl@gmail.com" method="POST">
+				<div class="form-group">
+					<div class="form-row">
+						<div class="col my-3">
+							<input type="text" name="name" class="form-control" placeholder="nome" required>
+						</div>
+						<div class="col my-3">
+							<input type="email" name="email" class="form-control" placeholder="email" required>
+						</div>
 					</div>
-					<div class="form-group mt-1">
-						<input type="email" class="form-control" name="email1" id="email1" placeholder="email" required>
-						<div class="help-block with-errors"></div>
-					</div>
-					<div class="form-group mt-1">
-						<input type="text" class="form-control" name="oggetto" id="oggetto" placeholder="oggetto"
-							required>
-						<div class="help-block with-errors"></div>
-					</div>
-					<div class="form-group mt-1">
-						<textarea type="text" rows="5" class="form-control" name="messaggio" id="messaggio"
-							placeholder="messaggio" required></textarea>
-						<div class="help-block with-errors"></div>
-					</div>
-					<button type="submit" name="submit" class="btn mt-4"><p style="color: white">invia</p></button>
+				</div>
+				<input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">
+				<div class="form-group my-3">
+					<textarea placeholder="messaggio" class="form-control" name="message" rows="5" required></textarea>
+				</div>
+				<button type="submit" class="btn btn-md btn-light btn-block">invia</button>
 				</form>
 			</div>
 		</div>
@@ -73,17 +83,18 @@
 		</div>
 		<div class="offcanvas-body">
 			<div>
-				<a href="../collection.html" class="link-dark my-3 d-inline-flex text-decoration-none rounded">home</a>
+				<a href="../about.html" class="link-dark my-3 d-inline-flex text-decoration-none rounded">about us</a>
 			</div>
 			<div>
-				<button onclick='openForm()' class="btn btn-toggle p-0 mt-1 rounded border-0" data-bs-dismiss="offcanvas">
+				<button onclick='openForm()' class="btn btn-toggle p-0 mt-1 rounded border-0"
+					data-bs-dismiss="offcanvas">
 					<p>union</p>
 				</button>
 			</div>
 
 			<button class="btn btn-toggle p-0 rounded border-0 collapsed" data-bs-toggle="collapse"
 				data-bs-target="#account-collapse" aria-expanded="false">
-				<p class="m-0">collections</p>
+				<p class="m-0">uniforms</p>
 			</button>
 			<div class="collapse" id="account-collapse">
 				<ul class="btn-toggle-nav list-unstyled fw-normal">
@@ -113,43 +124,43 @@
 						d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
 				</svg>
 			</a>
-			<a href="../home.html" class="logo">coltura</a>
+			<a href="../index.html" class="logo link-dark">coltura</a>
 		</div>
 
 		<div style="display:flex; justify-content: center">
-			<a onclick='openForm()' href="#" class="union">union</a>
+			<a onclick='openForm()' href="#" class="union link-dark">union</a>
 		</div>
 	</navbar>
 
 
 	<main>
 		<div class="container m-md-0">
-			<!-- title -->
-			<h1 class="text-md-start title text-center">c04-cot.tec;vas//3pa.lb</h1>
-
-			<p class="w-md-50 text-md-start text-center description">there are many variations of passages of Lorem
-				Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
-				randomised words which don't look even slightly believable. if you are going to use a passage of lorem
-				ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+			<p class="w-md-50 text-md-start text-center description">regina - operaia - lavanda - acacia - nido - rete -
+				arnia - gerarchia - organizzazione - raccolta - miele - salvaguardare</p>
 		</div>
 
 		<!-- photos -->
 
 		<!-- main photo with desc-->
 		<div class="position-relative overflow-hidden-50 p-3 p-md-1 m-md-1 text-center">
-			<img style=" object-fit: scale-down; height:50vh;" src="./photos/coltura_img/c02/c02_4.jpg"
+			<img class="hor-pic" style="object-fit: scale-down;" src="./photos/coltura_img/c02/c02_4.jpg"
 				alt="main photo">
-			<p class="my-3">descrizione del capo</p>
+		</div>
+
+		<div class="container m-md-0">
+			<p class="w-md-50 text-center description">anorak a collo alto allungabile, due tasche frontali,cintura in
+				tessuto e bucket hat in tessuto-pantaloni taglio dritto vita regolare con fodera estraibile, tasche ad
+				ala con aggancio per anorak.</p>
 		</div>
 
 		<!-- second photo with -->
-		<div class="position-relative overflow-hidden-50 py-3 m-md-1 text-center">
+		<div class="position-relative overflow-hidden-50 px-3 py-1 m-md-1 text-center">
 			<img style=" object-fit: scale-down; height:70vh;" src="./photos/coltura_img/c02/c02_8.jpg"
 				alt="main photo">
 		</div>
 
 		<!-- second photo with -->
-		<div class="position-relative overflow-hidden-50 py-3 m-md-1 text-center">
+		<div class="position-relative overflow-hidden-50 px-3 py-1 m-md-1 text-center">
 			<img style=" object-fit: scale-down; height:70vh;" src="./photos/coltura_img/c02/c02_13.jpg"
 				alt="main photo">
 		</div>
@@ -173,14 +184,14 @@
 		</div>
 
 		<!-- single photo -->
-		<div class="position-relative overflow-hidden-50 px-2 m-md-1 text-center">
-			<img style=" object-fit: scale-down; height:50vh;" src="./photos/coltura_img/c02/c02_7.jpg"
+		<div class="position-relative overflow-hidden-50 p-2 m-md-1 text-center">
+			<img class="hor-pic" style="object-fit: scale-down; height:50vh;" src="./photos/coltura_img/c02/c02_7.jpg"
 				alt="main photo">
 		</div>
 
 		<!-- single photo -->
-		<div class="position-relative overflow-hidden-50 px-2 m-md-1 text-center">
-			<img style=" object-fit: scale-down; height:40vh;" src="./photos/coltura_img/c02/c02_3.jpg"
+		<div class="position-relative overflow-hidden-50 p-2 m-md-1 text-center">
+			<img class="hor-pic" style=" object-fit: scale-down; height:40vh;" src="./photos/coltura_img/c02/c02_3.jpg"
 				alt="main photo">
 		</div>
 
@@ -201,7 +212,7 @@
 
 		<!-- 1 photo row -->
 		<div class="position-relative overflow-hidden-50 px-2 text-center">
-			<img style=" object-fit: scale-down; height:50vh;" src="./photos/coltura_img/c02/c02_5.jpg"
+			<img class="hor-pic" style="object-fit: scale-down; height:50vh;" src="./photos/coltura_img/c02/c02_5.jpg"
 				alt="main photo">
 		</div>
 
@@ -221,8 +232,8 @@
 				<li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
 							<use xlink:href="#instagram" />
 						</svg></a></li>
-				<li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
-							<use xlink:href="#facebook" />
+				<li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24" viewBox="0 0 16 16">
+							<use xlink:href="#youtube" />
 						</svg></a></li>
 			</ul>
 		</footer>
